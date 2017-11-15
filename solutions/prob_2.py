@@ -1,5 +1,5 @@
 h,j=input,range
-r=int(h()[0])
+r=int(h().split()[0])
 g=[]
 for i in j(r):
  g.append(h().split())
