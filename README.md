@@ -46,3 +46,134 @@ Fork this GitHub repository, and just copy and paste your repository link [here]
 * get.ridOfThatExtraDot.cpp
 * .filename.txt
 
+### Questions
+
+#### 1) Smartphone filtering 
+
+Following the nascent arrival of the best smartphone to ever exist (Google Pixel 2 XL), we are approached with this contracting task: given a list of devices and a list of banned combinations, how many acceptable devices are there?
+
+- The input format is JSON
+- Example input:
+```json
+{
+    "devices": [
+        {
+            "type": "phone",
+            "color": "panda",
+            "model": "Google Pixel 2 XL"
+        },
+        {
+            "type": "laptop",
+            "color": "white",
+            "model": "Apple 2015 Macbook Pro"
+        }
+    ],
+    "bans": [
+        {
+            "key": "type",
+            "value": "laptop"
+        }
+    ]
+}
+```
+
+- Example output (since there is 1 device that satisfies all the bans)
+```
+1
+```
+
+#### 2) Given a grid of 0's and 1's, count the number of 1's between the rectangle formed by the given coordinates
+- Coordinates are 0 based indices and inclusive
+- *Warning*: the grid can be large
+- Example input
+```
+R C               # length of the rows and columns of the grid
+N                 # number of test cases
+X_1 Y_1 X_2 Y_2   # coordinates per test case
+...
+```
+```
+5 12
+0 1 0 0 0 1 0 1 1 0 0 0
+0 0 0 0 0 1 0 0 1 0 1 1
+0 1 0 0 0 1 1 1 1 1 1 0
+0 1 0 0 0 1 0 0 0 1 0 1
+1 0 0 1 1 0 0 0 1 0 0 0
+3
+0 0 4 11
+0 1 4 1
+0 1 2 5
+```
+
+- Example output:
+```
+23
+3
+5
+```
+
+#### 3) Today, the Alumni Association tabled at Sarratt Promenade and gave out Chick-Fil-A sandwiches "while supplies last"ed. Fortunately, before the event we discovered how many sandwiches were ordered. Given the order in which students arrived, we want to know how long the line is at a certain time and how many sandiwches are left at that time.
+
+- Additional specifications
+    - It is not possible to receive a sandwich until after interacting with someone from the Alumni Association. Since the time spent talking to someone from the Alumni Association is related to a student's year, the following are interaction times for each class.
+        - 1 (Freshman):     1 minute
+        - 2 (Sophomore):    2 minutes
+        - 3 (Junior):       4 minutes
+        - 4 (Senior):       9 minutes
+    - Once sandwiches run out, all students leave the line.
+    - Time starts at 0
+
+- Input format:
+```
+T               # number of test cases
+C               # count of sandwiches
+S               # number of students
+t_i class       # S lines of time and class
+I               # Output line length and remaining sandwich count at time I
+```
+
+- Example input:
+```
+1               # 1 test case
+1               # 1 sandwich
+1               # 1 student
+0 1             # Student comes at t=0 and class = 1 (freshman)
+0               # Time to output
+```
+- Example output:
+``` 
+0 1             # The line is 0 minutes long and there is 1 sandwich at time 0
+```
+
+- Example input:
+```
+2               # 2 sets of test cases
+5               # 1st TC
+3             
+1 1
+2 2
+3 4
+3               # Print line length & sandwich count at t=3
+1               # 2nd TC
+3
+4 2
+6 2
+7 3
+8               # Print line length & sandwich count at t=8
+```
+- Example output:
+```
+10 4            # 10 minute long line and 4 sandwiches remaining (A student received a sandwich after t=1, and 2 more in line)
+3 1             # One received a sandwich after t=5, one received a sandwich after t=7, last person has been in line for 1 minute
+```
+
+Plug
+```
+With VUconnect, you can:
+·         Network with over 135,000 alumni worldwide
+·         Get alumni advice for internships, jobs, and graduate school
+·         Access the Alumni Career Adviser Network
+·         Find Alumni Chapters - to network in your hometown/where you'd like to move after graduation
+ 
+```
+
