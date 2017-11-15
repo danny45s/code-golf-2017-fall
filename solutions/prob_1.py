@@ -1,5 +1,5 @@
 import json
-d=json.load(open('1'))
+d=json.load(open('../inputs/1.json'))
 x=d['devices']
 y=d['bans']
 a=len(x)
